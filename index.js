@@ -7,6 +7,11 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3006;
 
+const corsOptions = {
+  origin: 'https://codebrew-rho.vercel.app', //  frontend application's URL
+  optionsSuccessStatus: 204
+};
+
 const validCredentials = {
   admin: {
     username: 'admin',
@@ -40,7 +45,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('User', UserSchema);
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 const log = (message) => {
   console.log(`[${new Date().toISOString()}] ${message}`);
@@ -180,7 +185,7 @@ app.delete('/staff/:id', async (req, res) => {
 
 app.get('/', (_, res) => {
   log('Root endpoint accessed');
-  res.send('Hello, Express!');
+  res.send('Hello, Server is running for Miniproject2!');
 });
 
 app.listen(port, () => {
