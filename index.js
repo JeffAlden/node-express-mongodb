@@ -169,6 +169,7 @@ app.put('/staff/:id', async (req, res) => {
 
 app.delete('/staff/:id', async (req, res) => {
   const { id } = req.params;
+  console.log('Received DELETE request for staff with id:', id);
   try {
     const staffDetails = await Staff.findByIdAndDelete(id);
     if (staffDetails) {
