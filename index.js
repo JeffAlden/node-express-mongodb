@@ -132,13 +132,14 @@ app.use(bodyParser.json());
 
 app.get('/staff', async (req, res) => {
   try {
-    const staffMembers = await Staff.find();
+    const staffMembers = await Staff.find({}, '_id name email phoneNumber address'); // Included _id 
     res.json(staffMembers);
   } catch (error) {
     console.error('Error fetching staff:', error);
     res.status(500).json({ error: 'Error fetching staff data' });
   }
 });
+
 
 app.post('/staff', async (req, res) => {
   const newStaff = req.body;
