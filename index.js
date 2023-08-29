@@ -186,7 +186,7 @@ app.delete('/staff/:id', async (req, res) => {
 
 app.get('/', (_, res) => {
   log('Root endpoint accessed');
-  res.send('Hello, Server is running for Miniproject2!');
+  res.send('Hello Wd74P, Server is running for Miniproject2!');
 });
 
 app.listen(port, () => {
