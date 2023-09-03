@@ -185,9 +185,11 @@ app.delete('/staff/:id', async (req, res) => {
 });
 
 
+// Route for the root endpoint
 app.get('/', (_, res) => {
   log('Root endpoint accessed');
-  res.send('Hello Wd74P, Server is running for Miniproject2!');
+  // sending the welcome.html file
+  res.sendFile(path.join(__dirname, 'welcome.html'));
 });
 
 app.listen(port, () => {
