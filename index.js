@@ -47,9 +47,6 @@ const User = mongoose.model('User', UserSchema);
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
-const log = (message) => {
-  console.log(`[${new Date().toISOString()}] ${message}`);
-};
 
 app.use((req, _, next) => {
   log(`Incoming HTTP Request - ${req.method} ${req.url}`);
@@ -327,10 +324,6 @@ span:nth-child(4){
 </body>
 </html>
     `);
-});
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
 });
 
 app.listen(port, () => {
