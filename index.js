@@ -185,11 +185,14 @@ app.delete('/staff/:id', async (req, res) => {
 });
 
 
-// Route for the root endpoint
 app.get('/', (_, res) => {
   log('Root endpoint accessed');
-  // sending the welcome.html file
-  res.sendFile(path.join(__dirname, 'welcome.html'));
+  res.sendFile(path.join(__dirname, 'welcome.html'), (err) => {
+    if (err) {
+      log('Error:', err);
+      res.status(500).send(err);
+    }
+  });
 });
 
 app.listen(port, () => {
