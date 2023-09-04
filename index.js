@@ -205,7 +205,7 @@ app.get('/', (_, res) => {
           left: 50%;
           transform: translate(-50%, -50%);
           font-family: 'Arial', sans-serif; /* Using a more readable font */
-          font-size: 24px; /* Adjusted font size */
+          font-size: 50px; /* Adjusted font size */
           line-height: 1.5; /* Added line height for better readability */
           color: #333;  /* Dark text for better contrast */
           text-align: center; /* Center aligned text */
