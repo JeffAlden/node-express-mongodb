@@ -195,64 +195,62 @@ app.get('/', (_, res) => {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 
-<Style>
-    .content{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-family: monospace;
-    letter-spacing: 20px;
-    width:max-content;
-}
-span{
-    opacity: 0;
-    animation:show_content 2s ease-in-out 1 forwards;
-}
-span:nth-child(2){
-    animation-delay: 1s;
-}
-span:nth-child(3){
-    animation-delay: 2s;
-}
-span:nth-child(4){
-    animation-delay: 3s;
-}
-@keyframes show_content{
-    0%{
-        opacity: 0;
-        filter:blur(33px)
-    }100%{
-        opacity: 1;
-        filter:blur(0px)
-    }
-}
-#svg{
-    position: relative;
-    z-index: -1;
-}
-.ellipse:nth-child(2n){
-    filter:blur(5px)
-}
-.line{
-    opacity: 0.5;
-}
-</Style>
-
-</head>
-<body>
-    <div class="content">
-        <span>Hello Wd74P,</span>
-        <span>Server is</span>
-        <span>running for</span>
-        <span> Miniproject2!</span>
-    </div>
-    <svg width="100vw" height="100vh" id="svg"></svg>
+    <style>
+        .content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: 'Arial', sans-serif; /* Using a more readable font */
+          font-size: 24px; /* Adjusted font size */
+          line-height: 1.5; /* Added line height for better readability */
+          color: #333;  /* Dark text for better contrast */
+          text-align: center; /* Center aligned text */
+          letter-spacing: normal;  /* Normal letter-spacing */
+          width: max-content;
+        }
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        span {
+          opacity: 0;
+          animation: show_content 2s ease-in-out 1 forwards;
+        }
+    
+        span:nth-child(2) { animation-delay: 1s; }
+        span:nth-child(3) { animation-delay: 2s; }
+        span:nth-child(4) { animation-delay: 3s; }
+    
+        @keyframes show_content {
+          0% { opacity: 0; filter: blur(33px); }
+          100% { opacity: 1; filter: blur(0px); }
+        }
+    
+        #svg {
+          position: relative;
+          z-index: -1;
+        }
+    
+        .ellipse:nth-child(2n) { filter: blur(5px); }
+        .line { opacity: 0.5; }
+      </style>
+    </head>
+    <body class="bg-light">
+      <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="text-center">
+          <div class="content">
+            <span>Hello Wd74P,</span>
+            <span>Server is</span>
+            <span>running for</span>
+            <span>Miniproject2!</span>
+          </div>
+          <svg width="100vw" height="100vh" id="svg"></svg>
+        </div>
+      </div>
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
        $(document).ready(function(){
     var array = [];
