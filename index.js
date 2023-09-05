@@ -254,7 +254,7 @@ app.get('/', (_, res) => {
     position: fixed;
     right: 2rem;
     bottom: 2rem;
-    background: #595be9;
+    background: #007bff;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
